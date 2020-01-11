@@ -7,7 +7,7 @@ freeswitch英文文档翻译，持续更新
 2.2	Variables  
 2.2.1	Global Variables  
 2.3	Call Legs  
-2.4	Endpoints  
+2.4	[Endpoints](docs/Introduction/Endpoints.md)  
 2.5	Life Cycle of a Call  
 2.6	FreeSWITCH API  
 2.7	Event System  
@@ -16,7 +16,7 @@ freeswitch英文文档翻译，持续更新
 2.7.3	Event Handlers  
 2.7.4	Event List  
 2.7.5	List of CUSTOM Events  
-2.8	Glossary  
+2.8	[Glossary](docs/Introduction/Glossary.md)  
 3	Documentation Guidelines  
 4	Release Process  
 5	Release Notes  
@@ -539,7 +539,7 @@ freeswitch英文文档翻译，持续更新
 17	Client and Developer Interfaces  
 17.1	Command-Line Interface fs_cli  
 17.2	Embedding FreeSWITCH  
-17.2.1	FreeSWITCH Softphone  
+17.2.1	[FreeSWITCH Softphone](docs\Client and Developer Interfaces\Embedding FreeSWITCH\FreeSWITCH Softphone.md)  
 17.3	Event Socket Library  
 17.3.1	Event Socket Outbound  
 17.4	FreeTDM  
@@ -926,4 +926,4 @@ freeswitch英文文档翻译，持续更新
 23.25.1	Variable presence data cols  
 23.26	mod_lcr parse scripts  
 23.27	YAC  
-  
+
