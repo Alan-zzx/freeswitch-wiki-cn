@@ -18,11 +18,11 @@
 
 这个列表并不全面，``Freeswitch``能够以你想象的任何方式使用，非常灵活。
 
-[默认配置](..\Configuration\Default Configuration.md)展示了一个全功能的 [PBX](Glossary.md) 和许多应用程序。
+[默认配置](../Configuration/Default Configuration.md)展示了一个全功能的 [PBX](Glossary.md) 和许多应用程序。
 
 # 2.如何运行 Freeswitch
 
-``Freeswitch``的核心是一个库，可以嵌入到你的应用程序并且运行在任意设备中。然而更常见的是，``Freeswitch``被作为后台程序运行（Unix或Linux系统中的守护进程、Windows系统中的服务）。当你使用守护进程的形式运行``Freeswtich``时，你可以使用[CLI](..\Client and Developer Interfaces\Command-Line Interface fs_cli.md) 与``Freeswitch``交互。
+``Freeswitch``的核心是一个库，可以嵌入到你的应用程序并且运行在任意设备中。然而更常见的是，``Freeswitch``被作为后台程序运行（Unix或Linux系统中的守护进程、Windows系统中的服务）。当你使用守护进程的形式运行``Freeswtich``时，你可以使用[CLI](../Client and Developer Interfaces/Command-Line Interface fs_cli.md) 与``Freeswitch``交互。
 
 ``Freeswitch``可以运行在任何平台上，包括Linux、Mac OS X、BSD、Solaris 甚至是 Windows。
 
@@ -30,11 +30,11 @@
 
 ``Freeswitch``虽然可以在许多 Linux 发行版中运行，例如 Debian、Ubuntu、CentOS、Fedora 和 RHEL，我们首选的发行版是 Debian，因为我们已经解决了对 Debian 的所有依赖，所以您可以顺利的安装和启动。Debian 也是``FreeSWITCH``开发人员使用的，因此最有经验。如果您在其他发行版上运行，您可能很难正确地处理所有依赖。
 
-> 有关最新支持的平台，请参阅[发行说明](..\Release Notes\Release Notes.md)和 [安装说明](..\Installation\Installation.md)。
+> 有关最新支持的平台，请参阅[发行说明](../Release Notes/Release Notes.md)和 [安装说明](../Installation/Installation.md)。
 
 硬件配置要求取决于如何使用``Freeswitch``，``Freeswitch``可以运行在像树莓派那样小的硬件中，也可以扩展到具有几十个 CPU 核心的强大数据中心服务器。``Freeswitch``可以同时处理上千的电话，取决于硬件配置和你使用的应用程序（applications）。
 
->有关硬件要求的更多信息，请参阅 [发行说明](..\Release Notes\Release Notes.md) 、[性能测试和配置](..\Configuration\Performance Testing and Configurations.md) 。
+>有关硬件要求的更多信息，请参阅 [发行说明](../Release Notes/Release Notes.md) 、[性能测试和配置](../Configuration/Performance Testing and Configurations.md) 。
 
 # 3.Freeswitch 的结构
 
@@ -50,7 +50,7 @@
 - 提供所有模块使用的一个**内核**，但是大多数功能并不在这个内核中实现
 - 而是在相互不依赖的**独立模块**中实现
 
-当你使用[默认配置](..\Configuration\Default Configuration.md) 安装``Freeswitch``时，默认启用了大多数常用场景下需要使用的模块。在后面的配置 [配置](..\Modules\XML Modules Configuration.md) 部分将展示如何启用或者禁用特定模块。
+当你使用[默认配置](../Configuration/Default Configuration.md) 安装``Freeswitch``时，默认启用了大多数常用场景下需要使用的模块。在后面的配置 [配置](../Modules/XML Modules Configuration.md) 部分将展示如何启用或者禁用特定模块。
 
 模块按其提供的功能类型分组。我们现在将探讨模块的类型，以及每个模块提供的功能。
 
@@ -59,21 +59,21 @@
 | 类型                                                         | 描述                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [Endpoints](Endpoints.md)                                    | 该模块提供了对于通讯设备的支持，例如 [VoIP](Glossary.md)、[PSTN](Glossary.md)（即固定电话）、Skype、Google Talk等等。 |
-| Application                                                  | 所有的 action 都发生在这里，默认配置中包含有数百个应用程序模块，例如播放一个文件，加入一个会议，将电话转入语音信箱，播放一个IVR菜单。[mod_dptools](..\Modules\mod_dptools\mod_dptools.md)提供了更多的常见应用程序。 |
-| [拨号计划（Dialplan）](..\Dialplan\Dialplan.md)              | 拨号计划模块主要负责路由呼叫功能，基于呼叫者ID、被叫号码等。默认拨号计划是[XML Dialplan](..\Dialplan\XML Dialplan.md)。我们将在[拨号计划](..\Dialplan\Dialplan.md)部分详细介绍。 |
-| [Directory](..\Directory\Directory.md)                       | 为注册到``Freeswitch``的用户提供身份验证和配置，最常用的Directory module 是 [XML Directory](..\Directory\XML User Directory.md)。 |
-| [编解码器（Codecs）](..\Codecs and Media\Codecs and Media.md) | 编解码器是用来编码和压缩音频流。                             |
-| File Formats                                                 | [mod_dptools playback](..\Modules\mod_dptools\mod_dptools playback.md)支持大多数常见音频文件格式。<br />注：支持的音频格式详见[mod_dptools playback](..\Modules\mod_dptools\mod_dptools playback.md)的第 3 部分 |
-| Loggers                                                      | 记录日志消息。其中一些日志记录器是[控制台（console）](..\Modules\mod_console.md)和[日志文件](..\Modules\mod_logfile.md)。[xml_cdr](..\Modules\mod_xml_cdr.md)是另一种常见的日志记录器，用于记录详细通话数据。 |
-| Languages                                                    | 拨号计划中支持运行的脚本语言。最流行的是[Lua](..\Modules\mod_lua\mod_lua.md)语言。也支持[JavaScript](..\Client and Developer Interfaces\JavaScript\JavaScript.md)和其他一些脚本语言。 |
+| Application                                                  | 所有的 action 都发生在这里，默认配置中包含有数百个应用程序模块，例如播放一个文件，加入一个会议，将电话转入语音信箱，播放一个IVR菜单。[mod_dptools](../Modules/mod_dptools/mod_dptools.md)提供了更多的常见应用程序。 |
+| [拨号计划（Dialplan）](../Dialplan/Dialplan.md)              | 拨号计划模块主要负责路由呼叫功能，基于呼叫者ID、被叫号码等。默认拨号计划是[XML Dialplan](../Dialplan/XML Dialplan.md)。我们将在[拨号计划](../Dialplan/Dialplan.md)部分详细介绍。 |
+| [Directory](../Directory/Directory.md)                       | 为注册到``Freeswitch``的用户提供身份验证和配置，最常用的Directory module 是 [XML Directory](../Directory/XML User Directory.md)。 |
+| [编解码器（Codecs）](../Codecs and Media/Codecs and Media.md) | 编解码器是用来编码和压缩音频流。                             |
+| File Formats                                                 | [mod_dptools playback](../Modules/mod_dptools/mod_dptools playback.md)支持大多数常见音频文件格式。<br />注：支持的音频格式详见[mod_dptools playback](../Modules/mod_dptools/mod_dptools playback.md)的第 3 部分 |
+| Loggers                                                      | 记录日志消息。其中一些日志记录器是[控制台（console）](../Modules/mod_console.md)和[日志文件](../Modules/mod_logfile.md)。[xml_cdr](../Modules/mod_xml_cdr.md)是另一种常见的日志记录器，用于记录详细通话数据。 |
+| Languages                                                    | 拨号计划中支持运行的脚本语言。最流行的是[Lua](../Modules/mod_lua/mod_lua.md)语言。也支持[JavaScript](../Client and Developer Interfaces/JavaScript/JavaScript.md)和其他一些脚本语言。 |
 
-还有更多类型的模块，但这些是最常见的。有关公共模块列表详见 [Modules](..\Modules\Modules.md) 。如果你想要一些现有模块没有的功能，你可以[写一个自己的模块](..\Community\Community.md) 。模块可以用许多流行的编程语言编写。详见 [开发者文档](..\Client and Developer Interfaces\Developer Documentation.md) 。
+还有更多类型的模块，但这些是最常见的。有关公共模块列表详见 [Modules](../Modules/Modules.md) 。如果你想要一些现有模块没有的功能，你可以[写一个自己的模块](../Community/Community.md) 。模块可以用许多流行的编程语言编写。详见 [开发者文档](../Client and Developer Interfaces/Developer Documentation.md) 。
 
 **API**
 
 许多模块也有 API 命令，这些命令可以从命令行、脚本或者通过 socket 连接的远程计算机发出。但是一些常见的功能包括返回状态信息（例如查询一个会议中有多少人参与），或者控制当前运行的应用程序（例如暂停正在播放的文件）不同模块中有数百个 API 可以调用。在命令行中，您可以输入``show api``来查看已加载的模块的所有 API 命令。
 
-内核提供的一些 API 命令，详见 [Commands](..\Modules\mod_commands.md) 模块。
+内核提供的一些 API 命令，详见 [Commands](../Modules/mod_commands.md) 模块。
 
 **文档导航**
 
@@ -81,16 +81,16 @@
 
 | 页面                                                         | 描述                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [安装（Installation）](..\Installation\Installation.md)      | 如何下载安装 Freeswitch                                      |
+| [安装（Installation）](../Installation/Installation.md)      | 如何下载安装 Freeswitch                                      |
 | [配置（Configuration）](Understanding the Configuration Files.md) | Freeswitch 配置文件概述                                      |
 | [运行 Freeswitch](https://freeswitch.org/confluence/pages/viewpage.action?pageId=15696307) | 如何在控制台运行 Freeswitch 或者作为后台程序运行             |
 | [Call Legs](Call Legs.md)                                    | 解释拨号计划和 Endpoints 的重要概念                          |
 | [ Endpoints](Endpoints.md)                                   | 解释 Endpoint 一般的概念，以及对 common endpoint 更详细的概述。 |
 | [拨号计划简介](https://freeswitch.org/confluence/pages/viewpage.action?pageId=15696304) | 拨号计划是 Freeswitch 最复杂的部分之一。                     |
-| [Directory](..\Directory\Directory.md)                       | 如何设置用户和设备                                           |
+| [Directory](../Directory/Directory.md)                       | 如何设置用户和设备                                           |
 | 日志和通话流水                                               | 设置日志和通话记录                                           |
-| [数据库](..\Databases\FreeSWITCH Databases.md)               | 如何配置 Freeswitch 在数据库中存储 channel state。           |
-| [Default Configuration](..\Configuration\Default Configuration.md) | 设定默认配置                                                 |
-| Session Scripts                                              | 如何通过编写在拨号计划中运行的脚本来自定义功能。[mod_lua](..\Modules\mod_lua\mod_lua.md), [mod_python](..\Modules\mod_python\mod_python.md), [mod_perl](..\Modules\mod_perl\mod_perl.md), [mod_v8](..\Modules\mod_v8.md) (for Google V8 JavaScript), [mod_java](..\Modules\mod_java.md) |
-| [Event Socket](..\Client and Developer Interfaces\Event Socket Library\Event Socket Library.md) | 允许外部程序通过网络连接与 Freeswitch 交互。[CLI](..\Client and Developer Interfaces\Command-Line Interface fs_cli.md) 使用 Event Socket 允许你运行命令并查看 Freeswitch 的输出。 |
+| [数据库](../Databases/FreeSWITCH Databases.md)               | 如何配置 Freeswitch 在数据库中存储 channel state。           |
+| [Default Configuration](../Configuration/Default Configuration.md) | 设定默认配置                                                 |
+| Session Scripts                                              | 如何通过编写在拨号计划中运行的脚本来自定义功能。[mod_lua](../Modules/mod_lua/mod_lua.md), [mod_python](../Modules/mod_python/mod_python.md), [mod_perl](../Modules/mod_perl/mod_perl.md), [mod_v8](../Modules/mod_v8.md) (for Google V8 JavaScript), [mod_java](../Modules/mod_java.md) |
+| [Event Socket](../Client and Developer Interfaces/Event Socket Library/Event Socket Library.md) | 允许外部程序通过网络连接与 Freeswitch 交互。[CLI](../Client and Developer Interfaces/Command-Line Interface fs_cli.md) 使用 Event Socket 允许你运行命令并查看 Freeswitch 的输出。 |
 
