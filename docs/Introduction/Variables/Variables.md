@@ -7,7 +7,7 @@
 - 传递数据 - 因为``Freeswitch``是建立在模块化的架构上的，因此变量提供了不同模块直接共享数据的一种便捷方式。
 - 方便配置 - ``Freeswitch``内核和许多模块的配置都有一些预定义的变量，这些通常都有一[Variables Master List](https://freeswitch.org/confluence/display/FREESWITCH/Variables+Master+List)个默认值，你可以修改这些变量的值。通过修改预定义变量的值可以实际控制``Freeswitch``的行为。
 
-# 全局变量（Global Variable）
+# 1.全局变量（Global Variable）
 
 顾名思义，全局变量对于整个``Freeswitch``系统都是可用的，在所有通道（channels）中值都是相同的。它的目的是用于定义不经常更改的变量。
 
@@ -15,11 +15,11 @@
 
 ``Freeswitch``内核以及一些模块有许多预设变量，一些在 [默认配置](../../Configuration/Default_Configuration.md) 文件 [vars.xml](../../Configuration/Configuring_FreeSWITCH/vars.xml.md) 中定义了，其他一些则由``Freeswitch``内核分配默认值。预定义变量详见[全局变量](Global_Variables.md) 页面。
 
-# 通道变量（Channel Variables）
+# 2.通道变量（Channel Variables）
 
 通道变量是指特定单个通道中的变量，例如主叫号码，被叫号码等等。你可以使用  [set](../../Modules/mod_dptools/mod_dptools_set.md)  来定义一个通道变量。因为通道变量是属于特定通道的，它们仅在具体通道的上下文中（例如在拨号计划中）或者在拨号计划中运行的脚本中可用。
 
-# 使用变量（Retrieving Variables）
+# 3.使用变量（Retrieving Variables）
 
 使用美元符号来使用变量，如``${variable_name}``。无论你在何处使用变量，``Freeswitch``引擎都会将它替换为变量的当前值。对于全局变量，所有通道中值都相同。通道变量仅仅在通道的上下文中可用，并且作为当前通道的值。例如，在拨号计划中，你可以根据 [被叫号码](../../Dialplan/Variables_Master_List.md) 创建规则。当拨号计划被作为一个通道时，它将查找这个通道中的被叫号码。
 
@@ -35,6 +35,6 @@
 >为了不增加混淆，这种区别只存在于配置文件中。在脚本，CLI，API calls等等中，一个 $ 和两个 $ 的语法没有什么不同，两个都可以用于检索全局变量和通道变量，并且都是运行时实时检索。
 
 
-# 系统定义变量（System Defined Variables）
+# 4.系统定义变量（System Defined Variables）
 
 除了使用 set 命令创建变量，``Freeswitch``内核和许多模块还创建加载了数百个变量。变量的完整列表详见 [主变量列表](../../Dialplan/Variables_Master_List.md) 。
