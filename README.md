@@ -4,7 +4,7 @@ freeswitch英文文档翻译，持续更新
 1	Index  
 2	[Introduction](docs/Introduction/Introduction.md)  
 2.1	Understanding the Configuration Files  
-2.2	Variables  
+2.2	[Variables](docs/Introduction/Variables/Variables.md)  
 2.2.1	Global Variables  
 2.3	Call Legs  
 2.4	[Endpoints](docs/Introduction/Endpoints.md)  
@@ -19,10 +19,10 @@ freeswitch英文文档翻译，持续更新
 2.8	[Glossary](docs/Introduction/Glossary.md)  
 3	Documentation Guidelines  
 4	Release Process  
-5	Release Notes  
-5.1	FreeSWITCH 1.10.x Release notes  
-5.2	FreeSWITCH 1.8.x Release notes  
-5.3	FreeSWITCH 1.6.x Release notes  
+5	[Release Notes](docs/Release_Notes/Release_Notes.md)  
+5.1	[FreeSWITCH 1.10.x Release notes](docs/Release_Notes/FreeSWITCH_1.10.x_Release_notes.md)  
+5.2	[FreeSWITCH 1.8.x Release notes](docs/Release_Notes/FreeSWITCH_1.8.x_Release_notes.md)  
+5.3	[FreeSWITCH 1.6.x Release notes](docs/Release_Notes/FreeSWITCH_1.6.x_Release_notes.md)  
 6	Installation  
 6.1	FreeSWITCH First Steps  
 6.2	Linux  
