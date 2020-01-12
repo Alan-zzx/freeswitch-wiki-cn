@@ -539,7 +539,7 @@ freeswitch英文文档翻译，持续更新
 17	Client and Developer Interfaces  
 17.1	Command-Line Interface fs_cli  
 17.2	Embedding FreeSWITCH  
-17.2.1	[FreeSWITCH Softphone](docs/Client and Developer Interfaces/Embedding FreeSWITCH/FreeSWITCH Softphone.md)  
+17.2.1	[FreeSWITCH Softphone](docs/Client_and_Developer_Interfaces/Embedding_FreeSWITCH/FreeSWITCH_Softphone.md)  
 17.3	Event Socket Library  
 17.3.1	Event Socket Outbound  
 17.4	FreeTDM  
